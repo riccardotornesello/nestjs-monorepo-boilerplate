@@ -1,4 +1,4 @@
-export interface PostgresConfig {
+export interface DatabaseConfig {
   host: string;
   port: number;
   username: string;
@@ -32,7 +32,7 @@ export interface AppConfig {
 }
 
 export interface Config {
-  postgres: PostgresConfig;
+  database: DatabaseConfig;
   auth: AuthConfig;
   redis: RedisConfig;
   mail: MailConfig;
@@ -40,12 +40,12 @@ export interface Config {
 }
 
 export const configSettings = (): Config => ({
-  postgres: {
-    host: process.env.POSTGRES_HOST || '127.0.0.1',
-    port: parseInt(process.env.POSTGRES_PORT || '', 10) || 5432,
-    username: process.env.POSTGRES_USERNAME || 'postgres',
-    password: process.env.POSTGRES_PASSWORD || 'postgres',
-    database: process.env.POSTGRES_NAME || 'postgres',
+  database: {
+    host: process.env.DATABASE_HOST || '127.0.0.1',
+    port: parseInt(process.env.DATABASE_PORT || '', 10) || 5432,
+    username: process.env.DATABASE_USERNAME || 'postgres',
+    password: process.env.DATABASE_PASSWORD || 'postgres',
+    database: process.env.DATABASE_NAME || 'postgres',
   },
   auth: {
     tokenTtl: 60 * 60 * 24, // 1 day

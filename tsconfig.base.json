@@ -15,7 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nestjs-monorepo-boilerplate/back-config": ["libs/back-config/src/index.ts"],
+      "@nestjs-monorepo-boilerplate/back-config": [
+        "libs/back-config/src/index.ts"
+      ],
+      "@nestjs-monorepo-boilerplate/back-database": [
+        "libs/back-database/src/index.ts"
+      ],
       "@nestjs-monorepo-boilerplate/constants": ["libs/constants/src/index.ts"]
     }
   },

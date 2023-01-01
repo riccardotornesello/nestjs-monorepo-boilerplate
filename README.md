@@ -24,3 +24,16 @@ import { ConfigModule } from '@nestjs-monorepo-boilerplate/back-config';
 ```
 
 2. To use the configuration service just `import { ConfigService } from '@nestjs-monorepo-boilerplate/back-config'`
+
+### Database
+
+#### Available resources
+
+```js
+import {
+  InjectRepository,
+  EntityManager,
+  DatabaseModule,
+  DatabaseFeatureModule,
+} from '@nestjs-monorepo-boilerplate/back-database';
+```
