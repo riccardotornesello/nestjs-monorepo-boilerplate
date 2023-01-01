@@ -1,8 +1,6 @@
 import { DynamicModule } from '@nestjs/common';
-import {
-  MikroOrmModule,
-  MikroOrmModuleFeatureOptions,
-} from '@mikro-orm/nestjs';
+import { MikroOrmModule } from '@mikro-orm/nestjs';
+import { EntityName } from '@mikro-orm/core';
 
 import { ConfigService } from '@nestjs-monorepo-boilerplate/back-config';
 
@@ -20,5 +18,5 @@ export const DatabaseModule: DynamicModule = MikroOrmModule.forRootAsync({
 });
 
 export const DatabaseFeatureModule = (
-  entities: MikroOrmModuleFeatureOptions
+  entities: EntityName<Partial<any>>[]
 ): DynamicModule => MikroOrmModule.forFeature(entities);
